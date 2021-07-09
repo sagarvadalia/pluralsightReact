@@ -1,9 +1,9 @@
 
 import react, {useState} from 'react'
 
-function Button() {
-  const [counter, setCounter] = useState(0)
+function Button(props) {
 
-  return <button onClick = {() => setCounter(counter+1)}> {counter} </button>
+
+  return <button onClick = {() => props.setCounter(props.counter+1)}> +1</button>
 }
 export default Button

@@ -26,7 +26,8 @@ function App() {
         </div>
 
         <Display message={counter}></Display>
-
+        <div id="root2"></div>
+        <div id="root3"></div>
       </header>
     </div>
   );

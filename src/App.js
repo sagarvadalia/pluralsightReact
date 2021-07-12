@@ -6,9 +6,11 @@ import RenderTime from './Components/RenderTime'
 import react, { useState, useEffect } from 'react';
 import GithubCardComponent from './Components/GithubCardComponent'
 import StarMatch from './Components/StarMatch'
+import Game from './Components/Game'
 function App() {
   const[display, setDisplay] = useState(2)
   const [counter, setCounter] = useState(0)
+  const [gameId, setGameId] = useState(1)
   const incrementBy1 = () => setCounter(counter + 1)
   const incrementBy5 = () => setCounter(counter + 5)
   const incrementBy10 = () => setCounter(counter + 10)
@@ -42,7 +44,7 @@ function App() {
             <Button onClickHandler={incrementBy10} increment={10}></Button>
             <Button onClickHandler={incrementBy20} increment={20}></Button>
           </div>)}
-          {display === 2 && (<div><StarMatch></StarMatch></div>)}
+          {display === 2 && (<div><Game key = {gameId} startNewGame={() => setGameId(gameId + 1)}></Game></div>)}
 
 
 

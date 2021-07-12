@@ -2,13 +2,15 @@ import ReactDOM from 'react-dom'
 import React from 'react'
 
 const RenderTime = () => {
-  document.getElementById('root2').innerHTML = `
+  {
+    document && (document.getElementById('root2').innerHTML = `
     <div>
       Hello HTML
       <input />
       <pre>${(new Date()).toLocaleTimeString()}</pre>
     </div>
-  `;
+  `)
+  }
 
   ReactDOM.render(
     React.createElement(

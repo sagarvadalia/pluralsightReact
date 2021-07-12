@@ -4,6 +4,7 @@ import Button from './Components/Button';
 import Display from './Components/Display'
 import RenderTime from './Components/RenderTime'
 import react, { useState, useEffect } from 'react';
+import GithubCardComponent from './Components/GithubCardComponent'
 function App() {
   const [counter, setCounter] = useState(0)
   const incrementBy1 = () => setCounter(counter + 1)
@@ -17,7 +18,10 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <div class = "flex">
+        <div class="flex">
+          <GithubCardComponent title = "The Github Cards App"></GithubCardComponent>
+
+
         <Button onClickHandler={incrementBy1} increment = {1}></Button>
         <Button onClickHandler={incrementBy5} increment = {5}></Button>
         <Button onClickHandler={incrementBy10} increment = {10}></Button>

@@ -12,11 +12,15 @@ import Form from './Form'
 class GithubCardComponent extends React.Component {
  state = {
       profiles:testData
-    }
+ }
+  addNewProfile = (profileData) => {
+    console.log('App', profileData)
+    this.setState(prevState => ({profiles: [...prevState.profiles, profileData]}))
+  }
   render() {
     return <div>
       <div className="header">{this.props.title}</div>
-      <Form></Form>
+      <Form onSubmit = {this.addNewProfile}></Form>
       <CardList profiles={this.state.profiles}></CardList>
 
       </div>

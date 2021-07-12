@@ -15,12 +15,25 @@ function App() {
   const incrementBy20 = () => setCounter(counter + 20)
    useEffect(() => {
     // Update the document title using the browser API
-     if (display === 1) { setInterval(RenderTime, 1000) }
-  });
+     if (display === 3) { setInterval(RenderTime, 1000) }
+   });
+  const onClick = (num) => {
+    setDisplay(num)
+  }
   return (
     <div className="App">
       <header className="App-header">
         <div class="flex">
+          <div class = "flex">
+            <nav>
+              {display !== 0 && <button onClick={() => onClick(0)}>Display Github Cards</button>}
+          {display !== 1 && <button onClick={() => onClick(1)}>Display Buttons</button>}
+          {display !== 2 && <button onClick={() => onClick(2)}>Display Star Game</button>}
+          {display !== 3 && <button onClick={() => onClick(3)}>Display Renders</button>}
+            </nav>
+          </div>
+
+
           {display === 0 && (<GithubCardComponent title="The Github Cards App"></GithubCardComponent>)}
 
           {display === 1 && (<div>
@@ -31,12 +44,19 @@ function App() {
           </div>)}
           {display === 2 && (<div><StarMatch></StarMatch></div>)}
 
-        </div>
+
 
         {display === 1 && (<div>
-          <Display message={counter}></Display>
-          <div id="root2"></div>
-          <div id="root3"></div></div>)}
+          <Display message={counter}></Display></div>
+        )}
+          {display === 3 && (
+            <div>
+               <div id="root2"></div>
+          <div id="root3"></div>
+            </div>
+
+          )}
+          </div>
       </header>
     </div>
   );
